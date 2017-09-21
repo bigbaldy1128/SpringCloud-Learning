@@ -3,6 +3,8 @@ package com.wjz.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 
+import java.util.Enumeration;
+
 /**
  * Created by wangj on 2017/8/5.
  */
