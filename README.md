@@ -1,6 +1,7 @@
-# Spring Cloud 简介
+# Spring Cloud
+## Spring Cloud 简介
 Spring Cloud是一个基于Spring Boot实现的微服务架构开发工具。它为微服务架构中涉及的配置管理、服务治理、负载均衡、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式
-# 主要的子项目
+## 主要的子项目
 * Spring Cloud Config：配置管理工具，实现配置的外部化存储
 * Spring Cloud Netflix：核心组件，对多个Netflix OSS开源套件进行整合
 * Eureka：服务治理组件
@@ -13,32 +14,77 @@ Spring Cloud是一个基于Spring Boot实现的微服务架构开发工具。它
 * Spring Cloud Stream：通过简单的声明式模型来发送和接收消息，整合了Rabbit和Kafka
 * Spring Cloud Security：安全工具包
 * Spring Cloud Sleuth：分布式跟踪
-# Spring Cloud Eureka - 服务治理
+## Spring Cloud Eureka - 服务治理
 ![](img/1.PNG)
-# Spring Cloud Ribbon - 负载均衡
+## Spring Cloud Ribbon - 负载均衡
 ![](img/2.PNG)
 负载均衡设备按照某种算法（线性轮询、按权重负载、按流量负载等）从维护的可用服务端清单中取出一台服务端的地址，然后进行转发
-# Spring Cloud Ribbon - 负载均衡策略
-## 按权重负载
+## Spring Cloud Ribbon - 负载均衡策略
+### 按权重负载
 假设有4个实例A、B、C、D，他们的平均响应时间为10、40、80、100，所以总响应时间是10+40+80+100=230，每个实例的权重为总响应时间与实例自身的平均响应时间的差的积累所得，所以实例A、B、C、D的权重分别如下所示：   
-* 实例A：230-10=220           [0,220]    
-* 实例B：220+(230-40)=410            (220,410]   
-* 实例C：410+(230-80)=560            (410,560]   
-* 实例D：560+(230-100)=690            (560,690]
+* 实例A：230-10=220         --> [0,220]    
+* 实例B：220+(230-40)=410   --> (220,410]   
+* 实例C：410+(230-80)=560   --> (410,560]   
+* 实例D：560+(230-100)=690  --> (560,690]
 
 实例的平均响应时间越短，权重区间越大，被选中的几率就越高
-# Spring Cloud Hystrix – 断路器
+## Spring Cloud Hystrix – 断路器
 在分布式架构中，当某个服务单元发生故障之后，通过断路器的故障监控，向调用方返回一个错误响应，而不是长时间的等待。这样就不会使得线程因调用故障服务被长时间占用不释放，避免了故障在分布式系统中的蔓延
-# Spring Cloud Feign – 声明式服务调用 
+## Spring Cloud Feign – 声明式服务调用 
 Spring Cloud Feign整合了Ribbon和Hystrix的功能，还提供了一种声明式的Web服务客户端定义方式
-# Spring Cloud Zuul – API网关服务
+## Spring Cloud Zuul – API网关服务
 API网关是一个更为智能的应用服务器，它的定义类似于面向对象设计模式中的Façade模式，它的存在就像是整个微服务架构系统的门面一样，所有的外部客户端访问都需要经过它来进行调度和过滤。   
-## 主要实现的功能
+### 主要实现的功能
 * 请求路由
 * 负载均衡
 * 校验过滤
-# Spring Cloud Stream – 消息驱动的微服务
+## Spring Cloud Stream – 消息驱动的微服务
 Spring Cloud Stream 是一个用来为微服务应用构建消息驱动能力的框架
+# HDFS
+* [官网地址](http://hadoop.apache.org/docs/current/index.html)
+* [Hadoop多节点集群安装配置](http://blog.csdn.net/u011692203/article/details/46898293)
+* [HDFS的运行原理](http://www.cnblogs.com/laov/p/3434917.html)
+## 伪分布式模式的简单配置步骤
+1. [下载hadoop](http://apache.communilink.net/hadoop/common/)
+```sh
+wget http://apache.communilink.net/hadoop/common/hadoop-2.8.1/hadoop-2.8.1.tar.gz
+```
+2. 打开etc/hadoop/hadoop-env.sh，配置java安装的根目录
+```sh
+export JAVA_HOME=/usr/java/latest
+``` 
+3. 打开etc/hadoop/core-site.xml，配置namenode的地址和端口
+```xml
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+```
+4. 打开etc/hadoop/hdfs-site.xml，配置数据副本数量
+```xml
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+</configuration>
+```
+5. 配置ssh免密登录（在Hadoop启动以后，NameNode是通过SSH（Secure Shell）来启动和停止各个DataNode上的各种守护进程的）
+```sh
+$ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+$ chmod 0600 ~/.ssh/authorized_keys
+```
+6. 格式化文件系统
+```sh
+$ bin/hdfs namenode -format
+```
+7. 启动NameNode和DataNode
+```sh
+$ sbin/start-dfs.sh
+```
 # Oauth2.0
 ## Token Auth
 Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（RFC 7519).该token被设计为紧凑且安全的，特别适用于分布式站点的单点登录（SSO）场景。JWT的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该token也可直接被用于认证，也可被加密.
@@ -77,13 +123,16 @@ https://jwt.io/introduction/
 ![](img/5.png)
 ## 基于Zuul的认证流程
 ![](img/6.png)
-# 参考资料
+# 参考文献
 * https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2   
-* https://spring.io/guides/tutorials/spring-boot-oauth2/   
+* https://spring.io/guides/tutorials/spring-boot-oauth2/
+* http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html  
 * http://blog.csdn.net/xiejx618/article/details/51039653   
 * https://jwt.io/introduction/
 * http://www.cnblogs.com/xiekeli/p/5607107.html
 * https://martinfowler.com/articles/microservices.html
-* 《Spring Cloud 微服务实战》
+* http://blog.csdn.net/u011692203/article/details/46898293
+* http://hadoop.apache.org/docs/current/index.html
+* [《Spring Cloud 微服务实战》](http://download.csdn.net/download/yonghu99999/9854548)
 
 
