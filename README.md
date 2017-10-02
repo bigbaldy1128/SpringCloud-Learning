@@ -55,14 +55,27 @@ https://jwt.io/introduction/
 * 性能: 一次网络往返时间（通过数据库查询session信息）总比做一次HMACSHA256计算 的Token验证和解析要费时得多.
 * 不需要为登录页面做特殊处理: 如果你使用Protractor 做功能测试的时候，不再需要为登录页面做特殊处理.
 * 基于标准化:你的API可以采用标准化的 JSON Web Token (JWT). 这个标准已经存在多个后端库（.NET, Ruby, Java,Python, PHP）和多家公司的支持（如：Firebase,Google, Microsoft）
-## Authorization Grant
-* Authorization Code
-* Implicit
-* Resource Owner Password Credentials
-* Client Credentials
-## Authoriztion Code
+## OAuth Roles
+* Resource Owner
+* Client
+* Resource Server
+* Authorization Server
+## 角色之间的关系
 ![](img/4.png)
+1. 用户打开客户端以后，客户端要求用户给予授权。
+2. 用户同意给予客户端授权。
+3. 客户端使用上一步获得的授权，向认证服务器申请令牌。
+4. 认证服务器对客户端进行认证以后，确认无误，同意发放令牌。
+5. 客户端使用令牌，向资源服务器申请获取资源。
+6. 资源服务器确认令牌无误，同意向客户端开放资源
+## Authorization Grant
+* Authorization Code - 授权码模式
+* Implicit - 简化模式
+* Resource Owner Password Credentials - 密码模式
+* Client Credentials - 客户端模式
+## 授权码模式认证流程
 ![](img/5.png)
+## 基于Zuul的认证流程
 ![](img/6.png)
 # 参考资料
 * https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2   
