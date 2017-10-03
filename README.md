@@ -39,9 +39,12 @@ API网关是一个更为智能的应用服务器，它的定义类似于面向�
 * 负载均衡
 * 校验过滤
 ## Spring Cloud Stream – 消息驱动的微服务
-Spring Cloud Stream 是一个用来为微服务应用构建消息驱动能力的框架
-## 消息组
-![](img/7.PNG)
+Spring Cloud Stream 是一个用来为微服务应用构建消息驱动能力的框架,大幅简化了开发人员对消息中间件的使用复杂度
+### 核心概念
+应用程序与消息中间件是通过绑定器Binder相关联的，有了绑定器我们更换消息中间件产品时只需要更换对应的Binder而不需要修改任何应用逻辑   
+![](img/8.PNG)
+### 消息组
+![](img/7.PNG)        
 # HDFS
 * [官网地址](http://hadoop.apache.org/docs/current/index.html)
 * [Hadoop多节点集群安装配置](http://blog.csdn.net/u011692203/article/details/46898293)
