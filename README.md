@@ -40,6 +40,8 @@ API网关是一个更为智能的应用服务器，它的定义类似于面向�
 * 校验过滤
 ## Spring Cloud Stream – 消息驱动的微服务
 Spring Cloud Stream 是一个用来为微服务应用构建消息驱动能力的框架
+## 消息组
+![](img/7.PNG)
 # HDFS
 * [官网地址](http://hadoop.apache.org/docs/current/index.html)
 * [Hadoop多节点集群安装配置](http://blog.csdn.net/u011692203/article/details/46898293)
@@ -90,6 +92,7 @@ $ sbin/start-dfs.sh
 Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（RFC 7519).该token被设计为紧凑且安全的，特别适用于分布式站点的单点登录（SSO）场景。JWT的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该token也可直接被用于认证，也可被加密.
 ## JWT的构成
 https://jwt.io/introduction/
+## Cookie与Token验证方式的对比
 ![](img/3.png)
 ## Token机制的优势
 * 支持跨域访问: Cookie是不允许垮域访问的，这一点对Token机制是不存在的，前提是传输的用户认证信息通过HTTP头传输.

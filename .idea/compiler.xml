@@ -12,6 +12,7 @@
         <module name="compute-service2" />
         <module name="eureka-feign" />
         <module name="eureka-server" />
+        <module name="hdfs" />
         <module name="stream" />
       </profile>
     </annotationProcessing>
@@ -23,6 +24,7 @@
       <module name="demo" target="1.8" />
       <module name="eureka-feign" target="1.8" />
       <module name="eureka-server" target="1.8" />
+      <module name="hdfs" target="1.8" />
       <module name="stream" target="1.8" />
     </bytecodeTargetLevel>
   </component>
