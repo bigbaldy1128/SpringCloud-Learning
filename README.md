@@ -14,6 +14,8 @@ Spring Cloud是一个基于Spring Boot实现的微服务架构开发工具。它
 * Spring Cloud Stream：通过简单的声明式模型来发送和接收消息，整合了Rabbit和Kafka
 * Spring Cloud Security：安全工具包
 * Spring Cloud Sleuth：分布式跟踪
+## 示例代码架构
+![](img/9.PNG)
 ## Spring Cloud Eureka - 服务治理
 ![](img/1.PNG)
 ## Spring Cloud Ribbon - 负载均衡
