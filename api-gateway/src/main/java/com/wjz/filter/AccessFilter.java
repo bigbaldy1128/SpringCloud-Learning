@@ -27,6 +27,7 @@ public class AccessFilter extends ZuulFilter {
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
+        ctx.getZuulRequestHeaders().get("access_token");
         return null;
     }
 

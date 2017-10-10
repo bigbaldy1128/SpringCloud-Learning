@@ -5,8 +5,8 @@ spring:
     proxy-target-class: true
 
 security:
-  user:
-    password: none
+#  user:
+#    password: none
   oauth2:
     client:
       accessTokenUri: http://localhost:9999/uaa/oauth/token
