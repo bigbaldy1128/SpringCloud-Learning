@@ -21,7 +21,7 @@ Spring Cloud是一个基于Spring Boot实现的微服务架构开发工具。它
 ![](img/1.PNG)
 ## Spring Cloud Ribbon - 负载均衡
 ![](img/2.PNG)
-负载均衡设备按照某种算法（线性轮询、按权重负载、按流量负载等）从维护的可用服务端清单中取出一台服务端的地址，然后进行转发
+* 负载均衡设备按照某种算法（线性轮询、按权重负载、按流量负载等）从维护的可用服务端清单中取出一台服务端的地址，然后进行转发
 ## Spring Cloud Ribbon - 负载均衡策略
 ### 按权重负载
 假设有4个实例A、B、C、D，他们的平均响应时间为10、40、80、100，所以总响应时间是10+40+80+100=230，每个实例的权重为总响应时间与实例自身的平均响应时间的差的积累所得，所以实例A、B、C、D的权重分别如下所示：   
@@ -44,12 +44,32 @@ API网关是一个更为智能的应用服务器，它的定义类似于面向�
 ## Spring Cloud Stream – 消息驱动的微服务
 Spring Cloud Stream 是一个用来为微服务应用构建消息驱动能力的框架,大幅简化了开发人员对消息中间件的使用复杂度
 ### 核心概念
-应用程序与消息中间件是通过绑定器Binder相关联的，有了绑定器我们更换消息中间件产品时只需要更换对应的Binder而不需要修改任何应用逻辑   
+应用程序与消息中间件是通过绑定器Binder相关联的，有了绑定器我们更换消息中间件产品时只需要更换对应的Binder而不需要修改任何应用逻辑      
 ![](img/8.PNG)
 ### 消息组
 ![](img/7.PNG)    
 ## Spring Cloud Config - 分布式配置中心
-Spring Cloud Config 是一个用来为分布式系统中的基础设施和微服务应用提供集中化的外部配置支持
+Spring Cloud Config 是一个用来为分布式系统中的基础设施和微服务应用提供集中化的外部配置支持   
+### 简单原理
+![](img/11.PNG)
+### 整合Spring Cloud Bus的完美解决方案
+![](img/10.PNG)
+1. 添加消息总线的依赖
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-bus-amqp</artifactId>
+</dependency>
+```
+2. 添加MQ的连接和用户信息
+```yml
+Spring:
+  rabbitmq:
+    host: 192.168.57.128
+    port: 5672
+    username: codesafe
+    password: codesafe
+```
 # HDFS
 * [官网地址](http://hadoop.apache.org/docs/current/index.html)
 * [Hadoop多节点集群安装配置](http://blog.csdn.net/u011692203/article/details/46898293)
