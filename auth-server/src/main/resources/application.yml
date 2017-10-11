@@ -3,7 +3,7 @@ server:
   contextPath: /uaa
 security:
   user:
-    password: 123
+    password: 123 #配置一个内存用户，用户名是user，密码是123
 logging:
   level:
     org.springframework.security: DEBUG

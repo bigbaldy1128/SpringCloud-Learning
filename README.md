@@ -17,6 +17,7 @@ Spring Cloud是一个基于Spring Boot实现的微服务架构开发工具。它
 ## 示例代码架构
 ![](img/9.PNG)
 ## Spring Cloud Eureka - 服务治理
+服务治理是微服务架构中最为核心和基础的模块，它主要用来实现各个微服务实例的自动化注册与发现
 ![](img/1.PNG)
 ## Spring Cloud Ribbon - 负载均衡
 ![](img/2.PNG)
@@ -46,7 +47,9 @@ Spring Cloud Stream 是一个用来为微服务应用构建消息驱动能力的
 应用程序与消息中间件是通过绑定器Binder相关联的，有了绑定器我们更换消息中间件产品时只需要更换对应的Binder而不需要修改任何应用逻辑   
 ![](img/8.PNG)
 ### 消息组
-![](img/7.PNG)        
+![](img/7.PNG)    
+## Spring Cloud Config - 分布式配置中心
+Spring Cloud Config 是一个用来为分布式系统中的基础设施和微服务应用提供集中化的外部配置支持
 # HDFS
 * [官网地址](http://hadoop.apache.org/docs/current/index.html)
 * [Hadoop多节点集群安装配置](http://blog.csdn.net/u011692203/article/details/46898293)

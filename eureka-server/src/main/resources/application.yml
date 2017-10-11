@@ -2,9 +2,10 @@ server:
   port: 1001
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false #是否向注册中心注册自己
+    fetch-registry: false #是否从eureka服务器获取注册信息
     service-url:
       defaultZone: http://localhost:${server.port}/eureka/
   server:
-    enable-self-preservation: false
+    enable-self-preservation: false #关闭自我保护（Eureka会保护心跳失败比率在15分钟之内低于85%的实例注册信息）
+    eviction-interval-timer-in-ms: 4000 #清理间隔

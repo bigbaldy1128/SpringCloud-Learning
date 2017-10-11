@@ -10,6 +10,8 @@
         <module name="auth-server" />
         <module name="compute-service" />
         <module name="compute-service2" />
+        <module name="config-client" />
+        <module name="config-server" />
         <module name="eureka-feign" />
         <module name="eureka-server" />
         <module name="hdfs" />
@@ -19,8 +21,11 @@
     <bytecodeTargetLevel>
       <module name="api-gateway" target="1.8" />
       <module name="auth-server" target="1.8" />
+      <module name="client" target="1.8" />
       <module name="compute-service" target="1.8" />
       <module name="compute-service2" target="1.8" />
+      <module name="config-client" target="1.8" />
+      <module name="config-server" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="eureka-feign" target="1.8" />
       <module name="eureka-server" target="1.8" />
