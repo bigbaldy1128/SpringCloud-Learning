@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          username: bigbaldy@163.com
+          password:
+          uri: https://github.com/bigbaldy1128/SpringCloud-Learning.git
+          search-paths:
+server:
+  port: 7001
