@@ -8,6 +8,6 @@ spring:
           username: bigbaldy@163.com
           password:
           uri: https://github.com/bigbaldy1128/SpringCloud-Learning.git
-          search-paths:
+          search-paths: config-server/config-repo/
 server:
   port: 7001
