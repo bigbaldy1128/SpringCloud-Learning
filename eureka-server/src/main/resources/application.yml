@@ -8,4 +8,4 @@ eureka:
       defaultZone: http://localhost:${server.port}/eureka/
   server:
     enable-self-preservation: false #关闭自我保护（Eureka会保护心跳失败比率在15分钟之内低于85%的实例注册信息）
-    eviction-interval-timer-in-ms: 4000 #清理间隔
+    #eviction-interval-timer-in-ms: 4000 #清理间隔
