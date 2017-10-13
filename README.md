@@ -33,6 +33,8 @@ Spring Cloud是一个基于Spring Boot实现的微服务架构开发工具。它
 实例的平均响应时间越短，权重区间越大，被选中的几率就越高
 ## Spring Cloud Hystrix – 断路器
 在分布式架构中，当某个服务单元发生故障之后，通过断路器的故障监控，向调用方返回一个错误响应，而不是长时间的等待。这样就不会使得线程因调用故障服务被长时间占用不释放，避免了故障在分布式系统中的蔓延
+* 工作原理
+![](https://raw.githubusercontent.com/wiki/Netflix/Hystrix/images/hystrix-command-flow-chart.png)
 ## Spring Cloud Feign – 声明式服务调用 
 Spring Cloud Feign整合了Ribbon和Hystrix的功能，还提供了一种声明式的Web服务客户端定义方式
 * [伪RPC模式](http://blog.didispace.com/spring-cloud-tips-feign-rpc/)
