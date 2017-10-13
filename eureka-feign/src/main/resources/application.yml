@@ -1,6 +1,10 @@
 spring:
   application:
     name: feign-consumer
+  cloud:
+      loadbalancer:
+        retry:
+          enabled: true
 server:
   port: 3001
 eureka:
@@ -10,3 +14,21 @@ eureka:
 feign:
   hystrix:
     enabled: true
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        errorThresholdPercentage: 10
+        requestVolumeThreshold: 2
+        sleepWindowInMilliseconds: 60000
+        # 60秒内2次请求，失败概率大于10%则启动断路器
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000 # 超时时间
+ribbon:
+  MaxAutoRetries: 1 #重试当前实例次数
+  MaxAutoRetriesNextServer: 2 #重试其他实例次数
+  OkRetryOnAllOperations: true
+  ReadTimeout: 1000
+  ConnectTimeout: 250
