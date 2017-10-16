@@ -16,6 +16,7 @@
         <module name="eureka-server" />
         <module name="hdfs" />
         <module name="stream" />
+        <module name="turbine" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,7 +31,9 @@
       <module name="eureka-feign" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="hdfs" target="1.8" />
+      <module name="hystrix-dashboard" target="1.8" />
       <module name="stream" target="1.8" />
+      <module name="turbine" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

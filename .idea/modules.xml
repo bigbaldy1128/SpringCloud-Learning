@@ -4,25 +4,16 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SpringCloud-Learning.iml" filepath="$PROJECT_DIR$/SpringCloud-Learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\api-gateway\api-gateway.iml" filepath="E:\MyCode\SpringCloud-Learning\api-gateway\api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-server/auth-server.iml" filepath="$PROJECT_DIR$/auth-server/auth-server.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\auth-server\auth-server.iml" filepath="E:\MyCode\SpringCloud-Learning\auth-server\auth-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/compute-service/compute-service.iml" filepath="$PROJECT_DIR$/compute-service/compute-service.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\compute-service\compute-service.iml" filepath="E:\MyCode\SpringCloud-Learning\compute-service\compute-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/compute-service2/compute-service2.iml" filepath="$PROJECT_DIR$/compute-service2/compute-service2.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\compute-service2\compute-service2.iml" filepath="E:\MyCode\SpringCloud-Learning\compute-service2\compute-service2.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-client/config-client.iml" filepath="$PROJECT_DIR$/config-client/config-client.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\config-client\config-client.iml" filepath="E:\MyCode\SpringCloud-Learning\config-client\config-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\config-server\config-server.iml" filepath="E:\MyCode\SpringCloud-Learning\config-server\config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-feign/eureka-feign.iml" filepath="$PROJECT_DIR$/eureka-feign/eureka-feign.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\eureka-feign\eureka-feign.iml" filepath="E:\MyCode\SpringCloud-Learning\eureka-feign\eureka-feign.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\eureka-server\eureka-server.iml" filepath="E:\MyCode\SpringCloud-Learning\eureka-server\eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/hdfs/hdfs.iml" filepath="$PROJECT_DIR$/hdfs/hdfs.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\hdfs\hdfs.iml" filepath="E:\MyCode\SpringCloud-Learning\hdfs\hdfs.iml" />
       <module fileurl="file://$PROJECT_DIR$/stream/stream.iml" filepath="$PROJECT_DIR$/stream/stream.iml" />
-      <module fileurl="file://E:\MyCode\SpringCloud-Learning\stream\stream.iml" filepath="E:\MyCode\SpringCloud-Learning\stream\stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/turbine/turbine.iml" filepath="$PROJECT_DIR$/turbine/turbine.iml" />
     </modules>
   </component>
 </project>
