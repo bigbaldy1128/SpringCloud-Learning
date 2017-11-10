@@ -16,7 +16,10 @@
         <module name="eureka-server" />
         <module name="hdfs" />
         <module name="stream" />
+        <module name="trace-1" />
+        <module name="trace-2" />
         <module name="turbine" />
+        <module name="zipkin-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -33,7 +36,10 @@
       <module name="hdfs" target="1.8" />
       <module name="hystrix-dashboard" target="1.8" />
       <module name="stream" target="1.8" />
+      <module name="trace-1" target="1.8" />
+      <module name="trace-2" target="1.8" />
       <module name="turbine" target="1.8" />
+      <module name="zipkin-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
