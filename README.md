@@ -73,6 +73,45 @@ Spring:
     username: codesafe
     password: codesafe
 ```
+## Logback+ELK
+* [安装](https://www.elastic.co/downloads)
+* 启动Elasticsearch
+```sh
+service elasticsearch start
+```
+* 配置kibana，修改文件/etc/kibana/kibana.yml
+```
+server.host: "0.0.0.0" //因为我不是本机访问，所以需要修改
+```
+* 启动kibana
+```sh
+service kibana start
+```
+* 在logstash安装目录的conf下新建logstash-springboot.conf,内容如下：   
+```
+input{
+    tcp{
+        port => 4560         //从本地的4560端口取日志
+        codec => json_lines  //需要安装logstash-codec-json_lines插件
+    }
+}
+output{
+    elasticsearch{hosts => ["localhost:9200"]}  //输出到ElasticSearch  
+    stdout{codec => rubydebug}  //若不需要在控制台中输出，此行可以删除 
+}
+```
+* 安装logstash-codec-json_lines插件
+```sh
+bin/logstash-plugin install logstash-codec-json_lines
+```
+* 启动
+```sh
+bin/logstash -f conf/logstash-springboot.conf &
+```
+* 访问kibana
+```
+http://172.24.62.181:5601/
+```
 # HDFS
 * [官网地址](http://hadoop.apache.org/docs/current/index.html)
 * [Hadoop多节点集群安装配置](http://blog.csdn.net/u011692203/article/details/46898293)
@@ -169,5 +208,6 @@ https://jwt.io/introduction/
 * http://blog.csdn.net/u011692203/article/details/46898293
 * http://hadoop.apache.org/docs/current/index.html
 * [《Spring Cloud 微服务实战》](http://download.csdn.net/download/yonghu99999/9854548)
+* http://blog.csdn.net/u014527058/article/details/70495595
 
 
