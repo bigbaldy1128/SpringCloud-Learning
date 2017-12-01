@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: zipkin-server
+#  datasource:
+#    schema: classpath:/mysql.sql
+#    url: jdbc:mysql://localhost:3306/zipkin
+#    username: root
+#    password: ct123!@#
+#    continue-on-error: true
+#    initialize: true
+# 无法使用mysql进行存储，配置了用户名密码没用，还是只使用系统账号
+server:
+  port: 9411
+#zipkin:
+#  storage:
+#    type: mysql
